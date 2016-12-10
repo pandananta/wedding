@@ -32,7 +32,7 @@ $( window ).load(function() {
 
     $('html, body').animate({
       scrollTop: scrollTop
-    }, 800);
+    }, 1200);
   }
 
   $(window).scroll(function() {
