@@ -1,0 +1,327 @@
+body {
+	margin: 0;
+  background-color: #F7F5F1;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  color: rgb(119, 94, 80);
+  text-align: center;
+}
+
+.nav-wrapper {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  bottom: 0;
+  background: transparent;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.nav-wrapper.opaque {
+  background-color: rgba(247, 245, 241, 1);
+}
+
+.nav-wrapper.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  box-shadow: 0 0px 6px 0 rgba(204,196,180,0.5);
+}
+
+.nav {
+  max-width: 850px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60px;
+}
+
+.navItem {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.navItem:hover {
+  color: #C9966B;
+}
+
+.navItem.active {
+  border-bottom: 4px solid #C9966B;
+}
+
+.pop {
+  color: #C9966B;
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 #fff;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 55px;
+  margin: 0; 
+  margin-bottom: 8px;
+  text-shadow: 0 1px 0 #fff;
+}
+
+h3 {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+h4 {
+  color: #C9966B;
+  font-weight: bold;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 #fff;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+a {
+  color: inherit;
+}
+
+li {
+  text-align: left;
+}
+
+.section {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-wrapper-unlimited {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.content-wrapper-unlimited h2 {
+  margin-top: 30px;
+}
+
+#schedule .content {
+  width: 702px;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.overlay {
+  background-color: rgba(155,166,190, 0.1);
+}
+
+.content {
+  min-width: 33%;
+  max-width: 850px;
+  text-align: left;
+  line-height: 1.44;
+  padding: 24px;
+  background-color: rgba(247, 245, 241, 0.7);
+}
+
+.pull-top {
+  transform: translateY(-35%);
+}
+
+.intro {
+  z-index: 10;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.bordered {
+  border: 1px solid;
+}
+
+.event {
+  margin-bottom: 30px;
+}
+
+form {
+  font-size: 26px;
+  border: none;
+  text-align: left;
+}
+
+input {
+  border: none;
+  color: #C9966B;
+  border-bottom: 1px solid rgb(119, 94, 80);
+  background: none;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 100px;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="text"]:focus:hover{
+  outline: none;
+} 
+
+.hide {
+  display: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+#rsvp .rsvp-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 70px;
+  padding: 20px;
+  width: 200px;
+  background-color: #C9966B;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.15);
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  font-style: normal;
+  cursor: pointer;
+  color: #F7F5F1;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+}
+
+.parallax-test {
+  background: transparent;
+  height: 100%;
+  width: 100%;
+}
+
+#title {
+  background: transparent;
+}
+
+
+#title .content {
+  background: transparent;
+}
+
+#lake-shrine {
+  background-image: url("Chrisrtmas-4.jpg");
+  background-position: 50% 30%;
+  <!-- background-attachment: fixed; -->
+}
+
+#malibu-pier {
+  background-image: url("malibu-pier.jpg");
+  background-position: 15% 100%;
+  <!-- background-attachment: fixed; -->
+}
+
+@media (min-width: 650px) {
+  ul {
+    margin: auto;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    padding: 0;
+  }
+}
+
+@media (max-width: 650px) {
+  h2 {
+    font-size: 30px;
+    line-height: 35px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  .wide {
+    display: none;
+  }
+
+  .nav {
+    width: calc(100% - 32px);
+    font-size: 12px;
+  }
+
+  .content-wrapper {
+    position: relative;
+  }
+
+  .content-wrapper-unlimited {
+    overflow: hidden;
+  }
+
+  .pull-top {
+    transform: initial;
+  }
+
+  #schedule {
+    padding: 0;
+  }
+
+  #lake-shrine {
+    height: 50vh;
+    position: relative;
+  }
+
+  #malibu-pier {
+    height: 50vh;
+    position: relative;
+  }
+
+  #schedule  .content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  #lake-shrine .content-wrapper  .content {
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  #malibu-pier .content-wrapper  .content {
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
