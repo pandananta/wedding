@@ -250,10 +250,11 @@ input[type="text"]:focus:hover{
   h2 {
     font-size: 30px;
     line-height: 35px;
+    text-shadow: none;
   }
 
   h4 {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .wide {
@@ -273,6 +274,14 @@ input[type="text"]:focus:hover{
     overflow: hidden;
   }
 
+  .overlay {
+    background-color: rgba(247, 245, 241, 0.7);
+  }
+
+  .content {
+    background-color: transparent;
+  }
+
   .pull-top {
     transform: initial;
   }
@@ -281,39 +290,26 @@ input[type="text"]:focus:hover{
     padding: 0;
   }
 
-  #lake-shrine {
-    height: 50vh;
+  #lake-shrine, #malibu-pier {
+    height: auto;
     position: relative;
+    background: transparent;
   }
 
-  #malibu-pier {
-    height: 50vh;
-    position: relative;
+  #lake-shrine .content, #malibu-pier .content {
+    text-align: left;
   }
 
-  #schedule  .content {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-  }
-
-  #lake-shrine .content-wrapper  .content {
+  #lake-shrine h3, #malibu-pier h3 {
+    font-style: normal;
+    font-size: 15px;
+    color: #CDA143;
     font-weight: bold;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    text-transform: uppercase;
+    text-shadow: 0 1px 0 #fff;
   }
 
-  #malibu-pier .content-wrapper  .content {
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+  #lake-shrine p, #malibu-pier p {
+    font-size: 12px;
   }
 }
