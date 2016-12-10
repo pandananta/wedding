@@ -28,6 +28,9 @@ $( window ).load(function() {
 
 
   function goTo(id) {
+    if (id === '#rsvp') {
+      return
+    }
     var scrollTop = scrollTops.find(function (el) { return el.id === id }).scrollTop
 
     $('html, body').animate({
