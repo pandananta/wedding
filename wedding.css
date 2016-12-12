@@ -38,6 +38,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 a.navItem {
@@ -210,7 +212,13 @@ input[type="text"]:focus:hover{
   cursor: pointer;
   color: #F7F5F1;
   text-decoration: none;
-  text-shadow: 0 1px 0 rgba(0,0,0,.15);
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+#rsvp .rsvp-button:hover {
+  transform: scale(1.02);
+  -webkit-filter: brightness(108%);
 }
 
 .parallax-test {
