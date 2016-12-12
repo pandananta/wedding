@@ -12,12 +12,6 @@ body {
   z-index: 10;
   bottom: 0;
   background: transparent;
-  -webkit-transition: background-color 0.5s;
-  transition: background-color 0.5s;
-}
-
-.nav-wrapper.opaque {
-  background-color: rgba(247, 245, 241, 1);
 }
 
 .nav-wrapper.sticky {
@@ -25,6 +19,7 @@ body {
   top: 0;
   left: 0;
   bottom: auto;
+  background-color: rgba(247, 245, 241, 1);
   box-shadow: 0 0px 10px 0 rgba(204,196,180,0.5);
 }
 
@@ -41,6 +36,7 @@ body {
 .navItem {
   cursor: pointer;
   text-transform: uppercase;
+  letter-spacing: 2px;
   font-weight: bold;
 }
 
@@ -79,6 +75,7 @@ h4 {
   font-weight: bold;
   font-size: 24px;
   text-transform: uppercase;
+  letter-spacing: 2px;
   text-shadow: 0 1px 0 #fff;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -125,17 +122,13 @@ li {
   flex-direction: column;
 }
 
-.overlay {
-  background-color: rgba(155,166,190, 0.1);
-}
-
 .content {
   min-width: 33%;
   max-width: 850px;
   text-align: left;
   line-height: 1.44;
   padding: 24px;
-  background-color: rgba(247, 245, 241, 0.7);
+  background-color: rgba(247, 245, 241, 1);
 }
 
 .content-wrapper-unlimited .content {
@@ -233,13 +226,14 @@ input[type="text"]:focus:hover{
 }
 
 #lake-shrine {
-  background-image: url("Chrisrtmas-4.jpg");
+  background-image: url("swan.jpg");
   background-position: 50% 30%;
 }
 
 #malibu-pier {
-  background-image: url("malibu-pier.jpg");
-  background-position: 15% 100%;
+  background-image: url("coffeemint.jpg");
+  background-position: bottom;
+  background-size: contain;
 }
 
 @media (min-width: 650px) {
@@ -312,6 +306,7 @@ input[type="text"]:focus:hover{
     color: #CDA143;
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing: 2px;
     text-shadow: 0 1px 0 #fff;
   }
 

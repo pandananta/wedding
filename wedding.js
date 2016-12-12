@@ -1,6 +1,7 @@
 $( window ).load(function() {
   var navLocation = $('#header').offset().top
   var navHeight = $('#header').height()
+  var navTransitionHeight = navLocation - navHeight
   var bottom = $(document).height()-$(window).height()
   var scrollTops = []
   var activeSectionId
@@ -41,18 +42,18 @@ $( window ).load(function() {
   $(window).scroll(function() {
     var newScrollPosition = $(this).scrollTop()
 
-    if (newScrollPosition > (navLocation - navHeight)){
-      $('.nav-wrapper').addClass("opaque");
-    } else {
-      $('.nav-wrapper').removeClass("opaque");
-    }
-
-    if (newScrollPosition > navLocation){
-      $('.nav-wrapper').addClass("sticky");
-    }
-
-    else{
+    if (newScrollPosition < navLocation) {
       $('.nav-wrapper').removeClass("sticky");
+      if (newScrollPosition < navTransitionHeight) {
+        $('.nav-wrapper').css({'background-color': 'transparent'});
+      } else {
+        let opacity = (newScrollPosition - navTransitionHeight)/(navLocation - navTransitionHeight)
+        let color = `rgba(247, 245, 241, ${opacity})`
+        $('.nav-wrapper').css({'background-color': color});
+      }
+    } else {
+      $('.nav-wrapper').addClass("sticky");
+      $('.nav-wrapper').css({'background-color': 'rgba(247, 245, 241, 1)'});
     }
 
     var currentSection = scrollTops.find(function (el) {
