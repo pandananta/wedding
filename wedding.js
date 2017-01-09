@@ -7,7 +7,7 @@ $( window ).load(function() {
   var scrollTops = []
   var activeSectionId
 
-  $('.menu-trigger-icon').on('click', function() {
+  $('.menu-trigger-icon').click(function() {
     toggleMenu();
   });
 
