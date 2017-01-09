@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Muli|Montserrat|Josefin+Sans|Quicksand');
+
 body {
 	margin: 0;
   background-color: #F7F5F1;
-  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-family: "Century Gothic", CenturyGothic, 'Lato', sans-serif;
   color: rgb(119, 94, 80);
   text-align: center;
   -webkit-transition: all .2s;
