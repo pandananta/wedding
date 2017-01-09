@@ -1,10 +1,15 @@
 $( window ).load(function() {
+  var narrow = window.matchMedia( "(max-width: 650px)" ).matches;
   var navLocation = $('#header').offset().top
   var navHeight = $('#header').height()
   var navTransitionHeight = navLocation - navHeight
   var bottom = $(document).height()-$(window).height()
   var scrollTops = []
   var activeSectionId
+
+  $('.menu-trigger-icon').on('click', function() {
+    toggleMenu();
+  });
 
   $('.navItem').each(function(){
     var id = $(this).attr("data-id")
@@ -27,8 +32,29 @@ $( window ).load(function() {
     }
   });
 
+  function toggleMenu () {
+    var $icon = $('.menu-trigger-icon');
+    
+    $( ".nav-wrapper" ).slideToggle('slow');
+    if ($icon.hasClass("open")) {
+      $icon.removeClass('open');
+    } else {
+      $icon.addClass('open');
+    }
+  }
+
+  function quickDismissMenu () {
+    var $icon = $('.menu-trigger-icon');
+
+    if ($icon.hasClass("open")) {
+      $( ".nav-wrapper" ).hide();
+      $icon.removeClass('open');
+    }
+  }
 
   function goTo(id) {
+    quickDismissMenu();
+
     if (id === '#rsvp') {
       return
     }
@@ -42,19 +68,21 @@ $( window ).load(function() {
   $(window).scroll(function() {
     var newScrollPosition = $(this).scrollTop()
 
-    if (newScrollPosition < navLocation) {
-      $('.nav-wrapper').removeClass("sticky");
-      if (newScrollPosition < navTransitionHeight) {
-        $('.nav-wrapper').css({'background-color': 'transparent'});
+    if (!narrow) {
+      if (newScrollPosition < navLocation) {
+        $('.nav-wrapper').removeClass("sticky");
+        if (newScrollPosition < navTransitionHeight) {
+          $('.nav-wrapper').css({'background-color': 'transparent'});
+        } else {
+          let opacity = (newScrollPosition - navTransitionHeight)/(navLocation - navTransitionHeight)
+          let color = `rgba(247, 245, 241, ${opacity})`
+          $('.nav-wrapper').css({'background-color': color});
+        }
       } else {
-        let opacity = (newScrollPosition - navTransitionHeight)/(navLocation - navTransitionHeight)
-        let color = `rgba(247, 245, 241, ${opacity})`
-        $('.nav-wrapper').css({'background-color': color});
+        $('.nav-wrapper').addClass("sticky");
+        $('.nav-wrapper').css({'background-color': 'rgba(247, 245, 241, 1)'});
       }
-    } else {
-      $('.nav-wrapper').addClass("sticky");
-      $('.nav-wrapper').css({'background-color': 'rgba(247, 245, 241, 1)'});
-    }
+    } 
 
     var currentSection = scrollTops.find(function (el) {
       return el.scrollTop < (newScrollPosition + navHeight)
