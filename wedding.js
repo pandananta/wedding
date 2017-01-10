@@ -7,10 +7,6 @@ $( window ).load(function() {
   var scrollTops = []
   var activeSectionId
 
-  $('.menu-trigger').on('touchstart', function() {
-    toggleMenu();
-  });
-
   $('.navItem').each(function(){
     var id = $(this).attr("data-id")
     scrollTops.unshift({ id: id, scrollTop: $(id).offset().top })
@@ -30,6 +26,10 @@ $( window ).load(function() {
       e.preventDefault();
       goTo(url)
     }
+  });
+
+  $('.menu-trigger').on('click touchstart', function() {
+    toggleMenu();
   });
 
   function toggleMenu () {
@@ -74,8 +74,8 @@ $( window ).load(function() {
         if (newScrollPosition < navTransitionHeight) {
           $('.nav-wrapper').css({'background-color': 'transparent'});
         } else {
-          let opacity = (newScrollPosition - navTransitionHeight)/(navLocation - navTransitionHeight)
-          let color = `rgba(247, 245, 241, ${opacity})`
+          var opacity = (newScrollPosition - navTransitionHeight)/(navLocation - navTransitionHeight)
+          var color = 'rgba(247, 245, 241,' +  opacity + ')'
           $('.nav-wrapper').css({'background-color': color});
         }
       } else {
@@ -95,8 +95,9 @@ $( window ).load(function() {
     }
 
     if (currentSectionId !== activeSectionId) {
+      var key = '.navItem[data-id=' + currentSectionId + ']'
       $('.navItem').removeClass('active')
-      $(`.navItem[data-id=${currentSectionId}]`).addClass('active')
+      $(key).addClass('active')
       activeSectionId = currentSectionId
     }
   });
