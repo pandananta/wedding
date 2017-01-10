@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Lato|Muli|Montserrat|Josefin+Sans|Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
 body {
 	margin: 0;
   background-color: #F7F5F1;
-  font-family: "Century Gothic", CenturyGothic, 'Lato', sans-serif;
+  font-family: "Century Gothic", 'Poppins', sans-serif;
   color: rgb(119, 94, 80);
   text-align: center;
   -webkit-transition: all .2s;
@@ -17,6 +17,7 @@ body {
   height: 60px; 
   line-height: 60px;
   z-index: 1000;
+  background: rgba(0,0,0,0.02);
 }
 
 .menu-trigger {
@@ -361,7 +362,8 @@ input[type="text"]:focus:hover{
   }
 
   h4 {
-    font-size: 15px;
+    font-size: 18px;
+    text-shadow: none;
   }
 
   .wide {
@@ -425,12 +427,11 @@ input[type="text"]:focus:hover{
 
   #lake-shrine h3, #malibu-pier h3 {
     font-style: normal;
-    font-size: 15px;
+    font-size: 18px;
     color: #CDA143;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 1px 0 #fff;
   }
 
   #lake-shrine p, #malibu-pier p {
