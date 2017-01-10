@@ -7,7 +7,7 @@ $( window ).load(function() {
   var scrollTops = []
   var activeSectionId
 
-  $('.menu-trigger').click(function() {
+  $('.menu-trigger').on('touchstart', function() {
     toggleMenu();
   });
 
