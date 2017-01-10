@@ -37,7 +37,6 @@ body {
   height: 3px;
   top: 50%;
   border-radius: 2px;
-  cursor: pointer;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
