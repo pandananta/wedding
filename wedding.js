@@ -25,7 +25,7 @@ $( window ).load(function() {
   });
 
   $('a').click(function(e) {
-    var url = $(this).attr("href")
+    var url = $(this).attr("href") || ''
     if (url.slice(0,1) === '#') {
       e.preventDefault();
       goTo(url)
