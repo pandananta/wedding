@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
 	margin: 0;
   background-color: #F7F5F1;
   font-family: "Century Gothic", 'Poppins', sans-serif;
   color: rgb(119, 94, 80);
   text-align: center;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .mobile-header {
@@ -67,7 +72,8 @@ body {
   left: 0;
   background: rgb(119, 94, 80);
   border-radius: 2px;
-  transition: all .2s;
+  transition: all .3s linear;
+  -webkit-transition: all .3s linear;
 }
 
 .open {
@@ -146,8 +152,9 @@ li {
 }
 
 .section {
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  position: relative;
   background-size: cover;
   overflow: hidden;
 }
@@ -157,7 +164,7 @@ li {
   height: 100%;
   width: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .content-wrapper-unlimited {
@@ -170,15 +177,8 @@ li {
   margin-top: 30px;
 }
 
-#schedule .content {
-  width: 702px;
-}
-
-.column {
-  flex-direction: column;
-}
-
 .content {
+  overflow:hidden;
   min-width: 33%;
   max-width: 850px;
   text-align: left;
@@ -192,52 +192,8 @@ li {
   background-color: #F7F5F1;
 }
 
-.pull-top {
-  transform: translateY(-35%);
-}
-
 .intro {
-  z-index: 10;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.bordered {
-  border: 1px solid;
-}
-
-.event {
-  margin-bottom: 30px;
-}
-
-form {
-  font-size: 26px;
-  border: none;
-  text-align: left;
-}
-
-input {
-  border: none;
-  color: #C9966B;
-  border-bottom: 1px solid rgb(119, 94, 80);
-  background: none;
-  font-size: 20px;
-  margin-bottom: 20px;
-  font-weight: 100px;
-}
-
-input:focus {
-  outline: none;
-}
-
-input[type="text"]:focus:hover{
-  outline: none;
-} 
-
-.hide {
-  display: none;
+  align-self: center;
 }
 
 .centered {
@@ -319,7 +275,7 @@ input[type="text"]:focus:hover{
     left: 0;
     bottom: auto;
     background-color: rgba(247, 245, 241, 1);
-    box-shadow: 0 0px 10px 0 rgba(204,196,180,0.5);
+    box-shadow: 0 0px 10px 0 rgba(204,198,180,0.5);
   }
 
   .nav {
@@ -348,8 +304,24 @@ input[type="text"]:focus:hover{
   }
 
   .content-wrapper-unlimited {
-    padding-top: 100px;
     padding-bottom: 100px;
+  }
+
+  .content {
+    margin-top: 100px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -webkit-transform: scale(0.98);
+  }
+
+  .content:hover {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
   }
 }
 
@@ -370,16 +342,17 @@ input[type="text"]:focus:hover{
   }
 
   .nav-wrapper {
+    background-color: #CDA143;
     background-color: #F7F5F1;
-    display: none; 
     position: fixed;
-    top: 0;
-    padding-top: 120px;
-    height: 100vh;
+    top: -100%;
+    height: calc(100% - 4px);
+    border-bottom: 4px solid #CDA143;
   }
 
   .nav {
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100%;
     font-size: 30px;
@@ -406,14 +379,6 @@ input[type="text"]:focus:hover{
     width: 100%;
   }
 
-  .pull-top {
-    transform: initial;
-  }
-
-  #schedule {
-    padding: 0;
-  }
-
   #lake-shrine, #malibu-pier {
     height: auto;
     position: relative;
@@ -435,5 +400,10 @@ input[type="text"]:focus:hover{
 
   #lake-shrine p, #malibu-pier p {
     font-size: 12px;
+  }
+
+  #rsvp .rsvp-button {
+    width: 100%;
+    padding: 20px 0px;
   }
 }

@@ -28,18 +28,20 @@ $( window ).load(function() {
     }
   });
 
-  $('.menu-trigger').on('click touchstart', function() {
+  $('.menu-trigger').on('touchstart', function() {
     toggleMenu();
   });
 
-  function toggleMenu () {
+  function toggleMenu (speed) {
     var $icon = $('.menu-trigger-icon');
-    
-    $( ".nav-wrapper" ).slideToggle('slow');
+    speed = speed || 800
+
     if ($icon.hasClass("open")) {
       $icon.removeClass('open');
+      $('.nav-wrapper').animate({'top': '-100%'}, speed);
     } else {
       $icon.addClass('open');
+      $('.nav-wrapper').animate({'top': '0'}, speed);
     }
   }
 
@@ -47,8 +49,8 @@ $( window ).load(function() {
     var $icon = $('.menu-trigger-icon');
 
     if ($icon.hasClass("open")) {
-      $( ".nav-wrapper" ).hide();
       $icon.removeClass('open');
+      $('.nav-wrapper').css({'top': '-100%'});
     }
   }
 
