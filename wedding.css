@@ -345,6 +345,7 @@ li {
     background-color: #F7F5F1;
     position: fixed;
     top: -100%;
+    right: 0;
     height: calc(100% - 4px);
     border-bottom: 4px solid #CDA143;
   }
