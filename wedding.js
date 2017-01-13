@@ -28,7 +28,7 @@ $( window ).load(function() {
     }
   });
 
-  $('.menu-trigger').on('touchstart', function() {
+  $('.menu-trigger').on('click', function() {
     toggleMenu();
   });
 
