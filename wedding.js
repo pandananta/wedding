@@ -61,6 +61,7 @@ $( window ).load(function() {
       return
     }
     var scrollTop = scrollTops.find(function (el) { return el.id === id }).scrollTop
+    console.log(scrollTops, scrollTop)
 
     $('html, body').animate({
       scrollTop: scrollTop
@@ -69,6 +70,7 @@ $( window ).load(function() {
 
   $(window).scroll(function() {
     var newScrollPosition = $(this).scrollTop()
+    console.log(newScrollPosition)
 
     if (!narrow) {
       if (newScrollPosition < navLocation) {

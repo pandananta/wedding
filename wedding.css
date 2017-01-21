@@ -8,11 +8,15 @@ body {
   height: 100%;
 	margin: 0;
   background-color: #F7F5F1;
-  font-family: "Century Gothic", 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: rgb(119, 94, 80);
   text-align: center;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+}
+
+p {
+  margin-bottom: 12px;
 }
 
 .mobile-header {
@@ -124,8 +128,7 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 18px;
   line-height: 28px;
   margin: 0;
@@ -136,7 +139,6 @@ h4 {
   color: #CDA143;
   font-weight: bold;
   font-size: 24px;
-  text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 0 1px 0 #fff;
   margin-top: 20px;
@@ -185,7 +187,6 @@ li {
   line-height: 1.44;
   padding: 24px;
   background-color: rgba(247, 245, 241, 1);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .content-wrapper-unlimited .content {
@@ -229,10 +230,8 @@ li {
   -webkit-filter: brightness(108%);
 }
 
-.parallax-container {
-  background: transparent;
+.full-height {
   height: 100%;
-  width: 100%;
 }
 
 #title {
@@ -309,19 +308,19 @@ li {
 
   .content {
     margin-top: 100px;
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-    transform: scale(0.98);
-    -moz-transform: scale(0.98);
-    -webkit-transform: scale(0.98);
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
   }
 
   .content:hover {
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-    transform: scale(1);
-    -moz-transform: scale(1);
-    -webkit-transform: scale(1);
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    -webkit-box-shadow: 0 27px 24px 0 rgba(0,0,0,0.2), 0 40px 77px 0 rgba(0,0,0,0.22);
+    -moz-box-shadow: 0 27px 24px 0 rgba(0,0,0,0.2), 0 40px 77px 0 rgba(0,0,0,0.22);
+    box-shadow: 0 27px 24px 0 rgba(0,0,0,0.2), 0 40px 77px 0 rgba(0,0,0,0.22);
   }
 }
 
@@ -360,6 +359,7 @@ li {
 
   .navItem {
     margin-bottom: 40px;
+    text-transform: none;
   }
 
   .content-wrapper {
@@ -394,7 +394,6 @@ li {
     font-size: 18px;
     color: #CDA143;
     font-weight: bold;
-    text-transform: uppercase;
     letter-spacing: 2px;
   }
 
