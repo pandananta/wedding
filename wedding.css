@@ -76,8 +76,8 @@ p {
   left: 0;
   background: rgb(119, 94, 80);
   border-radius: 2px;
-  transition: all .3s linear;
-  -webkit-transition: all .3s linear;
+  transition: all .2s linear;
+  -webkit-transition: all .2s linear;
 }
 
 .open {
